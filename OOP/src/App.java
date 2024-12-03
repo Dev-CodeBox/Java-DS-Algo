@@ -25,5 +25,24 @@ public class App {
         System.out.println("Name -> " + obj_Ctor_Copy.name);
         System.out.println("Age -> " + obj_Ctor_Copy.age);
         obj_Ctor_Copy.code();
+
+        // Encapsulation
+        Encapsulation obj_Encap = new Encapsulation(1, "encapObj", 5);
+        // Using Getter Method
+        System.out.println("ID -> " + obj_Encap.getId());
+        System.out.println("Name -> " + obj_Encap.getName());
+        System.out.println("Age -> " + obj_Encap.getAge());
+        obj_Encap.code();
+
+        // Using Setter Method
+        obj_Encap.setId(2);
+        obj_Encap.setName("setEncapobj");
+        obj_Encap.setAge(10);
+
+        // Using Getter Method
+        System.out.println("ID -> " + obj_Encap.getId());
+        System.out.println("Name -> " + obj_Encap.getName());
+        System.out.println("Age -> " + obj_Encap.getAge());
+        obj_Encap.code();
     }
 }
