@@ -44,5 +44,31 @@ public class App {
         System.out.println("Name -> " + obj_Encap.getName());
         System.out.println("Age -> " + obj_Encap.getAge());
         obj_Encap.code();
+
+        // Inheritance
+        Inheritance obj_Inherit = new Inheritance(1, "inheritObj", 5, "Problem Solving", "Web Developer");
+        // Using Getter Method
+        System.out.println("ID -> " + obj_Inherit.getId());
+        System.out.println("Name -> " + obj_Inherit.getName());
+        System.out.println("Age -> " + obj_Inherit.getAge());
+        System.out.println("Skill -> " + obj_Inherit.getSkill());
+        System.out.println("Profession -> " + obj_Inherit.getProfession());
+        obj_Inherit.study();
+
+        // Using Setter Method
+        obj_Inherit.setId(2);
+        obj_Inherit.setName("setInheritObj");
+        obj_Inherit.setAge(10);
+        obj_Inherit.setSkill("DS-Algo");
+        obj_Inherit.setProfession("MERN Developer");
+
+        // Using Getter Method
+        System.out.println("ID -> " + obj_Inherit.getId());
+        System.out.println("Name -> " + obj_Inherit.getName());
+        System.out.println("Age -> " + obj_Inherit.getAge());
+        System.out.println("Skill -> " + obj_Inherit.getSkill());
+        System.out.println("Profession -> " + obj_Inherit.getProfession());
+        obj_Inherit.study();
+
     }
 }
