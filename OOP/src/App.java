@@ -70,5 +70,34 @@ public class App {
         System.out.println("Profession -> " + obj_Inherit.getProfession());
         obj_Inherit.study();
 
+        // Polymorphism
+        Polymorphism obj_Polymor = new Polymorphism(1, "polyObj", 5, "polyObjPhism");
+        // Using Method Overloading
+        System.out.println("Sum Of Two Integer" + obj_Polymor.sum(5, 5));
+        System.out.println("Sum Of Three Integer" + obj_Polymor.sum(5, 5, 5));
+
+        // Using Method Overriding
+        obj_Encap.code();
+        obj_Polymor.code();
+
+        // Upcasting
+        doUpcasting(obj_Polymor);
+        doUpcasting(obj_Encap);
+
+        // Downcasting
+        doDowncasting(obj_Polymor);
+        // doDowncasting(obj_Encap); // Not Suggested (May Give RunTime Error)
+    }
+
+    // Upcasting Method
+    public static void doUpcasting(Encapsulation upcasEncap) {
+        upcasEncap.code();
+    }
+
+    // Downcasting Method
+    public static void doDowncasting(Encapsulation downcasEncap) {
+        downcasEncap.code();
+        Polymorphism obj_Polymor = (Polymorphism) downcasEncap;
+        obj_Polymor.code();
     }
 }
