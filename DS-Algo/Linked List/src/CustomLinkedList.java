@@ -29,6 +29,7 @@ public class CustomLinkedList {
         list.insertAtHead(scanner.nextInt());
         list.insertAtTail(scanner.nextInt());
         list.printList();
+        list.sizeOfList();
     }
 
     public void insertAtHead(int data) {
@@ -62,5 +63,15 @@ public class CustomLinkedList {
             temp = temp.next;
         }
         System.out.println("Null");
+    }
+
+    public void sizeOfList() {
+        Node temp = head;
+        int sizeCount = 0;
+        while (temp != null) {
+            sizeCount++;
+            temp = temp.next;
+        }
+        System.out.println("Size -> " + sizeCount);
     }
 }
