@@ -24,6 +24,11 @@ public class CustomLinkedList {
         CustomLinkedList list = new CustomLinkedList();
         list.insertAtHead(scanner.nextInt());
         list.insertAtTail(scanner.nextInt());
+        list.insertAtHead(scanner.nextInt());
+        list.insertAtTail(scanner.nextInt());
+        list.insertAtHead(scanner.nextInt());
+        list.insertAtTail(scanner.nextInt());
+        list.printList();
     }
 
     public void insertAtHead(int data) {
@@ -48,5 +53,14 @@ public class CustomLinkedList {
             tail.next = node;
             tail = node;
         }
+    }
+
+    public void printList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("Null");
     }
 }
