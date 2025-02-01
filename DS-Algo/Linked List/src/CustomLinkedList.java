@@ -23,6 +23,7 @@ public class CustomLinkedList {
         Scanner scanner = new Scanner(System.in);
         CustomLinkedList list = new CustomLinkedList();
         list.insertAtHead(scanner.nextInt());
+        list.insertAtTail(scanner.nextInt());
     }
 
     public void insertAtHead(int data) {
@@ -34,6 +35,18 @@ public class CustomLinkedList {
             Node node = new Node(data);
             node.next = head;
             head = node;
+        }
+    }
+
+    public void insertAtTail(int data) {
+        if (head == null && tail == null) {
+            Node node = new Node(data);
+            head = node;
+            tail = node;
+        } else {
+            Node node = new Node(data);
+            tail.next = node;
+            tail = node;
         }
     }
 }
