@@ -31,6 +31,8 @@ public class CustomLinkedList {
         list.printList();
         list.insertAtMid(scanner.nextInt());
         list.printList();
+        list.insertAtPos(8, scanner.nextInt());
+        list.printList();
         // list.sizeOfList();
     }
 
@@ -74,6 +76,22 @@ public class CustomLinkedList {
         } else {
             Node temp = head;
             for (int i = 0; i < insertAt; i++) {
+                temp = temp.next;
+            }
+            Node node = new Node(data);
+            node.next = temp.next;
+            temp.next = node;
+        }
+    }
+
+    public void insertAtPos(int pos, int data) {
+        if (head == null) {
+            Node node = new Node(data);
+        } else if (pos == 1) {
+            insertAtHead(data);
+        } else {
+            Node temp = head;
+            for (int i = 1; i < pos - 1; i++) {
                 temp = temp.next;
             }
             Node node = new Node(data);
