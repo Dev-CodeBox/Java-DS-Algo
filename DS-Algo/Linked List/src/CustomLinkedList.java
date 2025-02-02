@@ -23,13 +23,15 @@ public class CustomLinkedList {
         Scanner scanner = new Scanner(System.in);
         CustomLinkedList list = new CustomLinkedList();
         list.insertAtHead(scanner.nextInt());
-        list.insertAtTail(scanner.nextInt());
+        list.insertAtHead(scanner.nextInt());
         list.insertAtHead(scanner.nextInt());
         list.insertAtTail(scanner.nextInt());
-        list.insertAtHead(scanner.nextInt());
+        list.insertAtTail(scanner.nextInt());
         list.insertAtTail(scanner.nextInt());
         list.printList();
-        list.sizeOfList();
+        list.insertAtMid(scanner.nextInt());
+        list.printList();
+        // list.sizeOfList();
     }
 
     public void insertAtHead(int data) {
@@ -53,6 +55,30 @@ public class CustomLinkedList {
             Node node = new Node(data);
             tail.next = node;
             tail = node;
+        }
+    }
+
+    public void insertAtMid(int data) {
+        int size = 0;
+        Node sizeTemp = head;
+        while (sizeTemp != null) {
+            size++;
+            sizeTemp = sizeTemp.next;
+        }
+
+        int insertAt = (size % 2 == 0) ? (size / 2 - 1) : (size / 2);
+        if (head == null) {
+            Node node = new Node(data);
+            head = node;
+            tail = node;
+        } else {
+            Node temp = head;
+            for (int i = 0; i < insertAt; i++) {
+                temp = temp.next;
+            }
+            Node node = new Node(data);
+            node.next = temp.next;
+            temp.next = node;
         }
     }
 
