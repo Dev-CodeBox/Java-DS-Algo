@@ -33,6 +33,7 @@ public class CustomLinkedList {
         list.printList();
         list.insertAtPos(8, scanner.nextInt());
         list.printList();
+        System.out.println(list.searchTarget(5));
         // list.sizeOfList();
     }
 
@@ -98,6 +99,17 @@ public class CustomLinkedList {
             node.next = temp.next;
             temp.next = node;
         }
+    }
+
+    public boolean searchTarget(int target){
+        Node temp = head;
+        while(temp != null){
+            if(temp.data == target){
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
     }
 
     public void printList() {
