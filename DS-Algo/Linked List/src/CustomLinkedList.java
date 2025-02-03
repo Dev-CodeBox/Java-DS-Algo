@@ -34,6 +34,8 @@ public class CustomLinkedList {
         list.insertAtPos(8, scanner.nextInt());
         list.printList();
         System.out.println(list.searchTarget(5));
+        list.deleteAtPos(5);
+        list.printList();
         // list.sizeOfList();
     }
 
@@ -101,10 +103,20 @@ public class CustomLinkedList {
         }
     }
 
-    public boolean searchTarget(int target){
+    public void deleteAtPos(int pos) {
         Node temp = head;
-        while(temp != null){
-            if(temp.data == target){
+        for (int i = 1; i < pos - 1; i++) {
+            temp = temp.next;
+        }
+        Node deleteNode = temp.next;
+        temp.next = deleteNode.next;
+        deleteNode = null;
+    }
+
+    public boolean searchTarget(int target) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == target) {
                 return true;
             }
             temp = temp.next;
