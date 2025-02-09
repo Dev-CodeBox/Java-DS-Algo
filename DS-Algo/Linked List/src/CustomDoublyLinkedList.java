@@ -30,6 +30,7 @@ public class CustomDoublyLinkedList {
         list.insertAtTail(scanner.nextInt());
         list.insertAtTail(scanner.nextInt());
         list.insertAtTail(scanner.nextInt());
+        list.printList();
     }
 
     public void insertAtHead(int data) {
@@ -56,5 +57,14 @@ public class CustomDoublyLinkedList {
             tail.next = node;
             tail = node;
         }
+    }
+
+    public void printList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("Null");
     }
 }
