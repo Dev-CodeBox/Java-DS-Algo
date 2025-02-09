@@ -31,6 +31,7 @@ public class CustomDoublyLinkedList {
         list.insertAtTail(scanner.nextInt());
         list.insertAtTail(scanner.nextInt());
         list.printList();
+        System.out.println("Size Of List -> " + list.sizeOfList());
     }
 
     public void insertAtHead(int data) {
@@ -66,5 +67,15 @@ public class CustomDoublyLinkedList {
             temp = temp.next;
         }
         System.out.println("Null");
+    }
+
+    public int sizeOfList() {
+        Node temp = head;
+        int sizeCount = 0;
+        while (temp != null) {
+            sizeCount++;
+            temp = temp.next;
+        }
+        return sizeCount;
     }
 }
