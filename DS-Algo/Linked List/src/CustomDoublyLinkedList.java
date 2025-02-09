@@ -27,6 +27,9 @@ public class CustomDoublyLinkedList {
         list.insertAtHead(scanner.nextInt());
         list.insertAtHead(scanner.nextInt());
         list.insertAtHead(scanner.nextInt());
+        list.insertAtTail(scanner.nextInt());
+        list.insertAtTail(scanner.nextInt());
+        list.insertAtTail(scanner.nextInt());
     }
 
     public void insertAtHead(int data) {
@@ -39,6 +42,19 @@ public class CustomDoublyLinkedList {
             node.next = head;
             head.prev = node;
             head = node;
+        }
+    }
+
+    public void insertAtTail(int data) {
+        if (head == null && tail == null) {
+            Node node = new Node(data);
+            head = node;
+            tail = node;
+        } else {
+            Node node = new Node(data);
+            node.prev = tail;
+            tail.next = node;
+            tail = node;
         }
     }
 }
