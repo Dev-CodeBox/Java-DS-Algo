@@ -22,12 +22,13 @@ public class CustomCircularLinkedList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CustomCircularLinkedList list = new CustomCircularLinkedList();
-        list.insertAtHead(scanner.nextInt());
-        list.insertAtHead(scanner.nextInt());
-        list.insertAtHead(scanner.nextInt());
+        // list.insertAtHead(scanner.nextInt());
+        // list.insertAtHead(scanner.nextInt());
+        // list.insertAtHead(scanner.nextInt());
         list.insertAtTail(scanner.nextInt());
         list.insertAtTail(scanner.nextInt());
         list.insertAtTail(scanner.nextInt());
+        list.printList();
     }
 
     public void insertAtHead(int data) {
@@ -53,5 +54,17 @@ public class CustomCircularLinkedList {
             node.next = head;
             tail = node;
         }
+    }
+
+    public void printList() {
+        if (head == null) {
+            return;
+        }
+        Node temp = head;
+        do {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        } while (temp != head);
+        System.out.println("Null");
     }
 }
