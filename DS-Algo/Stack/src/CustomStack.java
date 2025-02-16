@@ -20,6 +20,7 @@ public class CustomStack {
         stack.insert(scanner.nextInt());
         stack.insert(scanner.nextInt());
         stack.delete();
+        System.out.println("Size -> " + stack.size());
     }
 
     public void insert(int data) {
@@ -39,5 +40,13 @@ public class CustomStack {
             System.out.println(arr[top]);
             top--;
         }
+    }
+
+    public int size() {
+        int size = 0;
+        for (int i = 0; i < arr.length; i++) {
+            size++;
+        }
+        return size;
     }
 }
