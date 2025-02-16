@@ -15,5 +15,18 @@ public class CustomStack {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Size for Stack -> ");
         CustomStack stack = new CustomStack(scanner.nextInt());
+        System.out.print("Enter value for Stack -> ");
+        stack.insert(scanner.nextInt());
+        stack.insert(scanner.nextInt());
+        stack.insert(scanner.nextInt());
+    }
+
+    public void insert(int data) {
+        if (top == arr.length - 1) {
+            System.out.println("Stack Overflow");
+            return;
+        } else {
+            arr[++top] = data;
+        }
     }
 }
