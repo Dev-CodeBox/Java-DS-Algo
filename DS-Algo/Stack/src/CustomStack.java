@@ -19,6 +19,7 @@ public class CustomStack {
         stack.insert(scanner.nextInt());
         stack.insert(scanner.nextInt());
         stack.insert(scanner.nextInt());
+        stack.delete();
     }
 
     public void insert(int data) {
@@ -27,6 +28,16 @@ public class CustomStack {
             return;
         } else {
             arr[++top] = data;
+        }
+    }
+
+    public void delete() {
+        if (top == -1) {
+            System.out.println("Stack End");
+            return;
+        } else {
+            System.out.println(arr[top]);
+            top--;
         }
     }
 }
