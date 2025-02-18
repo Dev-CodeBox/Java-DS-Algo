@@ -25,9 +25,11 @@ public class CustomStackUsingNode {
         st.push(scanner.nextInt());
         st.push(scanner.nextInt());
         st.push(scanner.nextInt());
+        st.print();
         st.pop();
         st.pop();
         st.pop();
+        st.print();
     }
 
     public void push(int data) {
@@ -49,5 +51,14 @@ public class CustomStackUsingNode {
             System.out.println("Popped Element -> " + top.data);
             top = top.next;
         }
+    }
+
+    public void print() {
+        StackNode temp = top;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("Null");
     }
 }
