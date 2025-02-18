@@ -25,6 +25,9 @@ public class CustomStackUsingNode {
         st.push(scanner.nextInt());
         st.push(scanner.nextInt());
         st.push(scanner.nextInt());
+        st.pop();
+        st.pop();
+        st.pop();
     }
 
     public void push(int data) {
@@ -35,6 +38,16 @@ public class CustomStackUsingNode {
             StackNode node = new StackNode(data);
             node.next = top;
             top = node;
+        }
+    }
+
+    public void pop() {
+        if (top == null) {
+            System.out.println("Stack Is Empty");
+            return;
+        } else {
+            System.out.println("Popped Element -> " + top.data);
+            top = top.next;
         }
     }
 }
