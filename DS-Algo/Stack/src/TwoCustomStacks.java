@@ -22,6 +22,8 @@ public class TwoCustomStacks {
         st.push1(scanner.nextInt());
         st.push2(scanner.nextInt());
         st.push2(scanner.nextInt());
+        System.out.println("Popped Element Stack 1 -> " + st.pop1());
+        System.out.println("Popped Element Stack 2 -> " + st.pop2());
     }
 
     public void push1(int data) {
@@ -42,5 +44,27 @@ public class TwoCustomStacks {
             top2--;
             arr[top2] = data;
         }
+    }
+
+    public int pop1() {
+        int popped = -1;
+        if (top1 == -1) {
+            return -1;
+        } else {
+            popped = arr[top1];
+            top1--;
+        }
+        return popped;
+    }
+
+    public int pop2() {
+        int popped = -1;
+        if (top2 == arr.length) {
+            return -1;
+        } else {
+            popped = arr[top2];
+            top2++;
+        }
+        return popped;
     }
 }
