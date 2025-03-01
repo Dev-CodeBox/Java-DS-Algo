@@ -15,5 +15,23 @@ public class CustomQueue {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter The Size For Queue -> ");
         CustomQueue queue = new CustomQueue(scanner.nextInt());
+        System.out.print("Enter The Value For Queue -> ");
+        queue.push(scanner.nextInt());
+        queue.push(scanner.nextInt());
+        queue.push(scanner.nextInt());
+        queue.push(scanner.nextInt());
+        queue.push(scanner.nextInt());
+    }
+
+    public static void push(int data) {
+        if (front == -1 && rear == -1) {
+            arr[++rear] = data;
+            front++;
+        } else if (rear == arr.length - 1) {
+            System.out.println("Queue Overflow");
+            return;
+        } else {
+            arr[++rear] = data;
+        }
     }
 }
