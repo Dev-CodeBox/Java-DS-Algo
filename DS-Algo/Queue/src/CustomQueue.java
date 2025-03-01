@@ -23,6 +23,7 @@ public class CustomQueue {
         queue.push(scanner.nextInt());
         queue.pop();
         queue.pop();
+        System.out.println("Size -> " + queue.size());
     }
 
     public static void push(int data) {
@@ -46,5 +47,12 @@ public class CustomQueue {
         } else {
             front++;
         }
+    }
+
+    public static int size() {
+        if (front == -1 && rear == -1) {
+            return 0;
+        }
+        return ((rear - front) + 1);
     }
 }
