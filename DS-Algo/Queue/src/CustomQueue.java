@@ -21,6 +21,8 @@ public class CustomQueue {
         queue.push(scanner.nextInt());
         queue.push(scanner.nextInt());
         queue.push(scanner.nextInt());
+        queue.pop();
+        queue.pop();
     }
 
     public static void push(int data) {
@@ -32,6 +34,17 @@ public class CustomQueue {
             return;
         } else {
             arr[++rear] = data;
+        }
+    }
+
+    public static void pop() {
+        if (front == -1 && rear == -1) {
+            System.out.println("Empty Queue");
+        } else if (front == rear) {
+            front = -1;
+            rear = -1;
+        } else {
+            front++;
         }
     }
 }
