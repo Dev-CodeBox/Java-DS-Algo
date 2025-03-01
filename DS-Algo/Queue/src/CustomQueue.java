@@ -24,6 +24,8 @@ public class CustomQueue {
         queue.pop();
         queue.pop();
         System.out.println("Size -> " + queue.size());
+        System.out.println("Front -> " + getFront());
+        System.out.println("Rear -> " + getRear());
     }
 
     public static void push(int data) {
@@ -54,5 +56,19 @@ public class CustomQueue {
             return 0;
         }
         return ((rear - front) + 1);
+    }
+
+    public static int getFront() {
+        if (front == -1 && rear == -1) {
+            System.out.println("No Element Present");
+        }
+        return arr[front];
+    }
+
+    public static int getRear() {
+        if (rear == -1 && rear == -1) {
+            System.out.println("No Element Present");
+        }
+        return arr[rear];
     }
 }
