@@ -16,6 +16,12 @@ public class CustomDeQueue {
         deq.pushFront(20);
         deq.pushFront(30);
         deq.print();
+        deq.pushBack(20);
+        deq.pushBack(30);
+        deq.pushBack(40);
+        deq.pushBack(50);
+        deq.pushBack(60);
+        deq.print();
     }
 
     public static void pushFront(int data) {
@@ -26,6 +32,17 @@ public class CustomDeQueue {
             System.out.println("Front At 0");
         } else {
             arr[--front] = data;
+        }
+    }
+
+    public static void pushBack(int data) {
+        if (front == -1 && rear == -1) {
+            front++;
+            arr[++rear] = data;
+        } else if (rear == arr.length - 1) {
+            System.out.println("Rear At Last");
+        } else {
+            arr[++rear] = data;
         }
     }
 
