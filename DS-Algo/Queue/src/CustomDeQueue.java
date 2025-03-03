@@ -24,6 +24,12 @@ public class CustomDeQueue {
         deq.print();
         System.out.println("Poped Element -> " + deq.popFront());
         deq.print();
+        System.out.println("Poped Element -> " + deq.popBack());
+        System.out.println("Poped Element -> " + deq.popBack());
+        System.out.println("Poped Element -> " + deq.popBack());
+        System.out.println("Poped Element -> " + deq.popBack());
+        deq.print();
+        System.out.println("Poped Element -> " + deq.popBack());
     }
 
     public static void pushFront(int data) {
@@ -63,6 +69,24 @@ public class CustomDeQueue {
             System.out.println("Rear At Last");
         } else {
             arr[++rear] = data;
+        }
+    }
+
+    public static int popBack() {
+        int poped = -1;
+        if (front == -1 && rear == -1) {
+            System.out.println("Queue Is Empty");
+            return -1;
+        } else if (front == rear) {
+            poped = arr[rear];
+            arr[rear] = -1;
+            front = -1;
+            rear = -1;
+            return poped;
+        } else {
+            poped = arr[rear];
+            arr[rear--] = -1;
+            return poped;
         }
     }
 
