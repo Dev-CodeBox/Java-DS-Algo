@@ -22,6 +22,8 @@ public class CustomDeQueue {
         deq.pushBack(50);
         deq.pushBack(60);
         deq.print();
+        System.out.println("Poped Element -> " + deq.popFront());
+        deq.print();
     }
 
     public static void pushFront(int data) {
@@ -32,6 +34,24 @@ public class CustomDeQueue {
             System.out.println("Front At 0");
         } else {
             arr[--front] = data;
+        }
+    }
+
+    public static int popFront() {
+        int poped = -1;
+        if (front == -1 && rear == -1) {
+            System.out.println("Queue Is Empty");
+            return -1;
+        } else if (front == rear) {
+            poped = arr[front];
+            arr[front] = -1;
+            front = -1;
+            rear = -1;
+            return poped;
+        } else {
+            poped = arr[front];
+            arr[front++] = -1;
+            return poped;
         }
     }
 
