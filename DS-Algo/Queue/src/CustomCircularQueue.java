@@ -17,6 +17,18 @@ public class CustomCircularQueue {
         q.push(3);
         q.push(4);
         q.push(5);
+        q.printQueue();
+        q.pop();
+        q.pop();
+        q.pop();
+        q.push(6);
+        q.push(7);
+        q.push(8);
+        q.printQueue();
+        q.pop();
+        q.pop();
+        q.pop();
+        q.printQueue();
     }
 
     public static void push(int val) {
@@ -32,5 +44,38 @@ public class CustomCircularQueue {
         } else {
             arr[++rear] = val;
         }
+    }
+
+    public static int pop() {
+        int poped = -1;
+        if (front == -1 && rear == -1) {
+            poped = -1;
+            System.out.println("Queue Is Empty");
+            return poped;
+        } else if (front == rear) {
+            poped = arr[front];
+            arr[front] = -1;
+            front = -1;
+            rear = -1;
+            return poped;
+        } else if (front == arr.length - 1) {
+            poped = arr[front];
+            arr[front] = -1;
+            front = 0;
+            return poped;
+        } else {
+            poped = arr[front];
+            arr[front++] = -1;
+            return poped;
+        }
+    }
+
+    public static void printQueue() {
+        System.out.print("Queue -> ");
+        int index = 0;
+        while (index < arr.length) {
+            System.out.print(arr[index++] + " ");
+        }
+        System.out.println();
     }
 }
