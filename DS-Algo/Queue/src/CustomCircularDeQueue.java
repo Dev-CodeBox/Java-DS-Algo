@@ -29,6 +29,12 @@ public class CustomCircularDeQueue {
         deq.popFront();
         deq.popFront();
         deq.printDeque();
+        deq.popBack();
+        deq.popBack();
+        deq.popBack();
+        deq.popBack();
+        deq.popBack();
+        deq.printDeque();
     }
 
     public static void pushFront(int data) {
@@ -77,6 +83,28 @@ public class CustomCircularDeQueue {
             poped = arr[front];
             arr[front] = -1;
             front++;
+        }
+        return poped;
+    }
+
+    public static int popBack() {
+        int poped = -1;
+        if (front == -1 && rear == -1) {
+            System.out.println("Deque Is Empty");
+            poped = -1;
+            return poped;
+        } else if (front == rear) {
+            poped = arr[front];
+            arr[front] = -1;
+            front = rear = -1;
+        } else if (rear == 0) {
+            poped = arr[rear];
+            arr[rear] = -1;
+            rear = arr.length - 1;
+        } else {
+            poped = arr[rear];
+            arr[rear] = -1;
+            rear--;
         }
         return poped;
     }
