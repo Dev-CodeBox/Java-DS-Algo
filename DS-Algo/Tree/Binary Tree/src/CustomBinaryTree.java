@@ -22,6 +22,9 @@ public class CustomBinaryTree {
 
         System.out.println();
         root.inorder(root);
+
+        System.out.println();
+        root.postorder(root);
     }
 
     public void insertLeft(int value) {
@@ -45,6 +48,14 @@ public class CustomBinaryTree {
             inorder(node.left);
             System.out.print(node.data + " ");
             inorder(node.right);
+        }
+    }
+
+    public static void postorder(CustomBinaryTree node) {
+        if (node != null) {
+            postorder(node.left);
+            postorder(node.right);
+            System.out.print(node.data + " ");
         }
     }
 }
