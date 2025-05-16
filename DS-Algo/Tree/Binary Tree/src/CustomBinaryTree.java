@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class CustomBinaryTree {
     int data;
     CustomBinaryTree left, right;
@@ -25,6 +28,9 @@ public class CustomBinaryTree {
 
         System.out.println();
         root.postorder(root);
+
+        System.out.println();
+        root.levelOrder(root);
     }
 
     public void insertLeft(int value) {
@@ -56,6 +62,29 @@ public class CustomBinaryTree {
             postorder(node.left);
             postorder(node.right);
             System.out.print(node.data + " ");
+        }
+    }
+
+    public static void levelOrder(CustomBinaryTree root) {
+        if (root == null)
+            return;
+
+        Queue<CustomBinaryTree> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+
+            for (int i = 0; i < levelSize; i++) {
+                CustomBinaryTree current = queue.poll();
+                System.out.print(current.data + " ");
+
+                if (current.left != null)
+                    queue.add(current.left);
+                if (current.right != null)
+                    queue.add(current.right);
+            }
+            System.out.println();
         }
     }
 }
