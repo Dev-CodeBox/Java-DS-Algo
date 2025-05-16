@@ -19,6 +19,9 @@ public class CustomBinaryTree {
         System.out.println("Tree created!");
 
         root.preorder(root);
+
+        System.out.println();
+        root.inorder(root);
     }
 
     public void insertLeft(int value) {
@@ -34,6 +37,14 @@ public class CustomBinaryTree {
             System.out.print(node.data + " ");
             preorder(node.left);
             preorder(node.right);
+        }
+    }
+
+    public static void inorder(CustomBinaryTree node) {
+        if (node != null) {
+            inorder(node.left);
+            System.out.print(node.data + " ");
+            inorder(node.right);
         }
     }
 }
